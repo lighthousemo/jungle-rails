@@ -1,0 +1,29 @@
+<section class="admin-products-index">
+
+  <header class="page-header">
+    <h2>Admin &raquo; Orders (<%= @orders.count %>)</h2>
+  </header>
+
+  <div class="panel panel-default products">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Price</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.id %></td>
+            <td><%= order.total_cents / 100 %></td>
+            <td><%= order.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
