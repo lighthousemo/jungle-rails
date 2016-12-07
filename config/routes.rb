@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  resources :products, only: [:index, :show]
+  # DSL
+  resources :products, only: [:index, :show, :edit]
   resources :categories, only: [:show]
 
   resource :cart, only: [:show] do
